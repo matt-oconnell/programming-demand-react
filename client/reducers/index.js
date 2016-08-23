@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import searchTerms from './search-terms';
+import inputs from './inputs';
 
 const rootReducer = combineReducers({
-	searchTerms,
+	inputs,
 	routing: routerReducer
 });
 

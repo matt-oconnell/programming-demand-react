@@ -6,11 +6,11 @@ import thunk from 'redux-thunk'
 // import root reducer
 import rootReducer from './reducers/index'
 
-import searchTerms from './data/search-terms'
+import inputs from './data/inputs'
 
 // create an object for the default data
 const defaultState = {
-	searchTerms
+	inputs
 }
 
 const store = createStore(rootReducer, defaultState, applyMiddleware(thunk))

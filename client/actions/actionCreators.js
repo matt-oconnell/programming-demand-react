@@ -19,9 +19,28 @@ function newExampleAction(example) {
   }
 }
 
-export function addSearchTerms(terms) {
+export function updateInput(i, val) {
   return {
-    type: 'ADD_SEARCH_TERMS',
-    terms
+    type: 'UPDATE_INPUTS',
+    i,
+    val
+  }
+}
+
+export function addBlankInput() {
+  return {
+    type: 'ADD_BLANK_INPUT'
+  }
+}
+
+export function removeLastInput() {
+  return {
+    type: 'REMOVE_LAST_INPUT'
+  }
+}
+
+export function makeQuery() {
+  return {
+    type: 'MAKE_QUERY'
   }
 }

@@ -6,6 +6,7 @@ import css from './styles/style.styl';
 
 // Components
 import App from './components/App';
+import Form from './components/Form';
 
 // Routing
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
@@ -29,5 +30,5 @@ render(router, document.getElementById('root'));
 import { newExample } from './actions/actionCreators'
 // on each page change, trigger this
 history.listen(location => {
-	store.dispatch(newExample(location))
+	// store.dispatch(newExample(location))
 })

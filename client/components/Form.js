@@ -1,33 +1,24 @@
 import React from 'react'
 
 const Form = React.createClass({
-  getInitialState: function() {
-    return {
-      inputs: ['']
-    };
-  },
   handleSubmit: function() {
-    const {state, props} = this
-    const inputValues = state.inputs.map(input => input.value)
-    props.addSearchTerms(inputValues)
+    this.props.makeQuery()
   },
   handleAdd: function() {
-    const {inputs} = this.state
-    this.setState({inputs: inputs.concat([''])})
+    this.props.addBlankInput('')
   },
   handleRemove: function() {
-    const {inputs} = this.state
-    const newInputs = inputs.length > 1 ? inputs.slice(0, -1) : inputs
-    this.setState({inputs: newInputs})
+    this.props.removeLastInput()
+  },
+  handleChange: function(i, e) {
+    this.props.updateInput(i, e.target.value)
   },
   render() {
     return (
       <div className="inputs">
-        {this.state.inputs.map(
-          (input, i) =>
-            <input key={i} type="text" ref={(ref) => this.state.inputs[i] = ref}/>
-          )
-        }
+        {this.props.inputs.map(
+          (input, i) => <input key={i} type="text" defaultValue={input} onChange={this.handleChange.bind(this, i)}/>
+        )}
         <div onClick={this.handleSubmit}>Submit Answers</div>
         <div onClick={this.handleAdd}>Add+</div>
         <div onClick={this.handleRemove}>Remove-</div>
