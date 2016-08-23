@@ -1,6 +1,1 @@
-React/Redux Boilerplate
-
-- ES6
-- Hot Module Reloading
-- Express
-- Stylus
+Display demand for technologies using 3rd party APIs
